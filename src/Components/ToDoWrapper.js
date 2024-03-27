@@ -36,9 +36,9 @@ const ToDoWrapper = () => {
     }
 //mt-[5rem] p-[2rem] mx-7
     return (
-        <div className='flex justify-center items-center h-screen mt-[-15%]'>
+        <div className='flex justify-center  mt-[5%]'>
 
-        <div className='bg-[#1A1A40] w-[800px] rounder-lg mx-auto p-[2rem]'>
+        <div className='bg-[#1A1A40] w-[800px] rounder-lg  p-[2rem]'>
             <h1 className='text-3xl text-white font-bold'>TO DO LIST</h1>
 
             <ToDoForm addToDo={addToDo}/>
