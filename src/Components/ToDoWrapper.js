@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ToDoForm from './ToDoForm';
 import ToDo from './ToDo';
 import EditToDoForm from './EditToDoForm';
-import {v4 as uuidv4} from 'uuid';
+import {v4 as uuidv4} from 'uuid';  
 
 const ToDoWrapper = () => {
     const [todos, setTodos] = useState([]);
@@ -16,7 +16,6 @@ const ToDoWrapper = () => {
         setTodos(todos.map(todo=>(
             todo.id===id ? {...todo, completed: !todo.completed} : todo
         )));
-        console.log(todos.id);
     }
 
     const deleteTask = id => {
