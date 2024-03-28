@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const ToDoForm = ({addToDo}) => {
+const ToDoForm = ({addToDo, DeleteAllToDo}) => {
     const inputRef=useRef(null);
 
     useEffect(()=>{
@@ -14,6 +14,11 @@ const ToDoForm = ({addToDo}) => {
         addToDo(value);
         setValue('');
         console.log(value);
+    }
+
+    const handleDelete=e=>{
+        DeleteAllToDo();
+        setValue('');
     }
 
     return (
@@ -32,6 +37,16 @@ const ToDoForm = ({addToDo}) => {
                     type='submit'
                 >
                     Add Task
+                </button>
+
+
+                {/* delete */}
+                <button 
+                    className='bg-[#ff2121] text-white border-none p-2 cursor-pointer'
+                    type='button' 
+                    onClick={handleDelete}
+                >
+                    Delete All Task
                 </button>
             </form>
         </div>
