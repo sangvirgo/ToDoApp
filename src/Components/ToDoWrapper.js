@@ -39,7 +39,14 @@ const ToDoWrapper = () => {
     }
 
     const deleteTask = id => {
-        setTodos(todos.filter(todo=>todo.id !==id))
+        const updateTask=todos.filter(todo=> todo.id !==id);
+        setTodos(updateTask);
+        localStorage.removeItem("todos");
+        localStorage.setItem("todos", JSON.stringify(updateTask))
+
+        // setTodos(todos.filter(todo=>todo.id !==id));
+        // localStorage.removeItem("todos");
+        // localStorage.setItem("todos", JSON.stringify([...todos]));
     }
 
     const editTask = id => {
